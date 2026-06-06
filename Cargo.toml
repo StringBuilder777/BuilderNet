@@ -10,4 +10,4 @@ categories = ["command-line-utilities", "network-programming"]
 
 [dependencies]
 crossterm = "0.29"
-ratatui = "0.29"
+ratatui = "0.30"
