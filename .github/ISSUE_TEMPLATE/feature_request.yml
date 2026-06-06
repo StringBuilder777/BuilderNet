@@ -1,0 +1,29 @@
+name: Solicitud de funcion
+description: Propone una mejora o nueva capacidad.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema
+      description: Explica el problema o necesidad que resolveria.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Propuesta
+      description: Describe el comportamiento esperado.
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Plataforma principal
+      options:
+        - macOS
+        - Linux
+        - Ambas
+    validations:
+      required: true

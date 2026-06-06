@@ -1,0 +1,13 @@
+[package]
+name = "red-tui"
+version = "0.1.0"
+edition = "2024"
+description = "Monitor de red interactivo para terminal con multiping, escaneo ARP y topologia local."
+license = "MIT"
+readme = "README.md"
+keywords = ["network", "monitoring", "ping", "ratatui", "tui"]
+categories = ["command-line-utilities", "network-programming"]
+
+[dependencies]
+crossterm = "0.29"
+ratatui = "0.29"

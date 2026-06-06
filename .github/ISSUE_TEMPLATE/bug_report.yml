@@ -1,0 +1,37 @@
+name: Reporte de error
+description: Reporta un comportamiento incorrecto o inesperado.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripcion
+      description: Explica claramente el problema.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Pasos para reproducir
+      description: No incluyas credenciales, IP privadas sensibles ni MAC reales.
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Sistema operativo
+      placeholder: macOS 15, Ubuntu 24.04, etc.
+    validations:
+      required: true
+  - type: input
+    id: rust
+    attributes:
+      label: Version de Rust
+      placeholder: Salida de rustc --version
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Informacion adicional
