@@ -21,7 +21,7 @@ multiping y descubrir dispositivos de la red.
 ## Requisitos
 
 - Rust y Cargo.
-- Comandos del sistema `ping` y `arp`.
+- Comandos del sistema `ping`, `arp` y `traceroute`.
 - Una terminal compatible con colores y caracteres Unicode.
 
 Comprueba la instalacion de Rust:
@@ -64,8 +64,10 @@ Ejecuta pings concurrentes cada dos segundos. Para cada destino muestra:
 
 ### Grafico de red
 
-Realiza un escaneo de la red `/24` correspondiente al gateway y muestra los
-dispositivos encontrados en la tabla ARP.
+Realiza un escaneo de la red `/24` correspondiente al gateway, combina
+respuestas de ping con vecinos ARP y muestra que dispositivos fueron
+alcanzados. Tambien ejecuta un trace hacia `1.1.1.1` para visualizar los saltos
+de salida a Internet.
 
 ## Controles
 
@@ -74,15 +76,21 @@ dispositivos encontrados en la tabla ARP.
 | `1` | Abrir monitor de red |
 | `2` | Abrir pings multiples |
 | `3` | Abrir grafico de red |
-| `↑` / `↓` | Cambiar seleccion |
+| `↑` / `↓` | Cambiar seleccion; en topologia selecciona dispositivos |
+| `PgUp` / `PgDn` | Desplazar los saltos del trace en topologia |
+| `Home` / `End` | Ir al primer o ultimo dispositivo/salto en topologia |
 | `Enter` | Abrir opcion o confirmar destino |
 | `a` | Agregar IP o dominio al multiping |
 | `d` | Eliminar destino seleccionado |
-| `s` | Escanear dispositivos de la red |
+| `s` | Escanear dispositivos de la red y tracear `1.1.1.1` |
 | `Esc` | Volver a la bienvenida o cancelar |
 | `q` | Salir |
 
 ## Limitaciones
+
+La vista de topologia usa una representacion isometrica portable de Ratatui.
+Los widgets 3D de Ratty requieren un terminal compatible con Ratty Graphics
+Protocol, por lo que no se habilitan por defecto.
 
 El programa utiliza `ping`, `arp` y la tabla de rutas del sistema. ARP solo
 permite descubrir dispositivos dentro de la red local y no identifica toda la
